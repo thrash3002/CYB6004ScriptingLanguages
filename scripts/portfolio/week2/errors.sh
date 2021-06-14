@@ -1,4 +1,9 @@
 #!/bin/bash
+
+### errors.sh
+### - use 'read' command without a variable to store user input into 
+###   default $REPLY variable
+
 secret='shhh' #Don't tell anyone!
 read -s -p "what's the secret code?"
 echo

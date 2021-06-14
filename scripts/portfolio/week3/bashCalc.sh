@@ -1,5 +1,9 @@
 #!/bin/bash
 
+### bashCalc.sh
+### - use 'echo -e' with colour codes to colour text
+### - use in built bash calculator 'bc' to perform calculations
+
 #colours of operations
 additionCol='\033[0;34m'
 subtractCol='\033[0;32m'
@@ -10,17 +14,6 @@ noCol='\033[0m'
 #TODO bodmas stack
 
 read -p "What is your arithmetic operation? " request
-
-#echo "$request" | grep -q [+]
-#if test $? -eq 0 ; then
-	#echo "$request" | grep -b -o + | awk 'BEGIN {FS=":"}{print $1}'>operandIndex
-	#first=${request:0:operandIndex}
-	#second=${request:operandIndex+1}
-	#echo $operandIndex
-	#echo $first
-	#echo $second
-	#echo $first + $second
-#fi
 
 result=$(echo "$request" | bc)
 intResult=$(echo "$result / 1" | bc)

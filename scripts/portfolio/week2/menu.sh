@@ -1,5 +1,10 @@
 #!/bin/bash
 
+### menu.sh
+### - call another script within a script
+### - use 'case' conditional
+### - use '*)' for default case in 'case' conditional
+
 #run passwordCheck.sh
 ./passwordCheck.sh
 

@@ -1,4 +1,8 @@
 #!/bin/bash     
+
+### megafoldermaker.sh
+### - use of for loop along with command line args
+
 #If there aren't two arguments to the script
 if (( $#!=2 )); then
     #Print an error and exit 

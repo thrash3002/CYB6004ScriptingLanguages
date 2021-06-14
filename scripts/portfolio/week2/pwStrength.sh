@@ -1,5 +1,13 @@
 #!/bin/bash
 
+### pwStrength.sh
+### - use read without text prompt on the same line
+### - use '${#}' to obtain the  length of a variable
+### - use 'test' instead of '[' with 'if conditional
+### - pipe a variable into grep with a range
+### - use grep in quiet mode
+### - use nested 'if' conditionals
+
 echo "enter the password"
 read pw
 len="${#pw}"

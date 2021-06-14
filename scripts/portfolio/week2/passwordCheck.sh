@@ -1,5 +1,11 @@
 #!/bin/bash
 
+### passwordCheck.sh
+### - pipe a variable to sha256sum to compare to a stored hash
+### - query exit status of previous line from $?
+### - use '-eq' test within 'if' conditional
+### - return an exit code
+
 # prompt user to enter in password
 # -s flag for silent entry
 read -sp "Please enter in your password: " pwd

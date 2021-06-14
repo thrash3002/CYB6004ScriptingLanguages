@@ -1,5 +1,8 @@
 #!/bin/bash
-#If there aren't two arguments to the script
+
+### fruitloop.sh
+### - hard initialise an array
+### - use a for loop with an array
 
 fruits=("Apple" "Mango" "Strawberry" "Orange" "Banana")
 
