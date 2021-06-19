@@ -1,5 +1,10 @@
 #!/bin/bash
 
+### GuessingGame.sh
+### - use of functions, both within a function and within the main script
+### - example of how $REPLY has a global scope and can be used outside of
+###	the function in which it was written to
+
 #This function prints a given error
 printError()
 {
