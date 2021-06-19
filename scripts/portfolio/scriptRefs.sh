@@ -6,6 +6,7 @@ isType=0
 isName=0
 isDirectory=0
 isFile=0
+showDir=0
 
 for ln in $treeJson
 do
@@ -15,6 +16,11 @@ do
 			ln="${ln%\"}"	# remove trailing quote
 			ln="${ln#\"}"	# remove leading quote
 			cd $ln
+			echo $ln | grep -q 'week'
+			if [ $? -eq 0 ]; then
+				showDir=1
+				dir=$ln
+			fi
 		elif [ 1 -eq $isFile ]; then
 			ln="${ln%\"}"	# remove trailing quote
 			ln="${ln#\"}"	# remove leading quote
@@ -22,10 +28,22 @@ do
 				if (( $#==1 )); then # an arg has been passed.  only find files relating to this arg
 					cat $ln | grep '###' | grep -v 'cat $ln | grep' | grep -q $1
 					if [ $? -eq 0 ]; then
+						if [ 1 -eq $showDir ]; then # show the directory on the first entry
+							echo "$dir:"
+							echo
+							showDir=0
+							dir=""
+						fi
 						cat $ln | grep '###' | grep -v 'cat $ln | grep'
 						echo
 					fi
 				else
+					if [ 1 -eq $showDir ]; then # show the directory name on the first entry
+						echo "$dir:"
+						echo
+						showDir=0
+						dir=""
+					fi
 					# output the description comment lines of the 
 					# script and ignore this line itself 
 					cat $ln | grep '###' | grep -v 'cat $ln | grep'
