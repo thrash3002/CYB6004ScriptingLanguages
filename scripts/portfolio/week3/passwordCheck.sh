@@ -5,6 +5,7 @@
 ### - query exit status of previous line from $?
 ### - use '-eq' test within 'if' conditional
 ### - return an exit code
+### - use echo -e to colour the text during a read prompt
 
 redTxt='\033[0;31m'
 grnTxt='\033[0;32m'
