@@ -8,19 +8,23 @@
 #run passwordCheck.sh
 ./passwordCheck.sh
 
+blueTxt='\033[0;34m'
+cyanTxt='\033[0;36m'
+noCol='\033[0m'
+
 # check that password check succeeded
 if [ $? -eq 0 ] ; then
 	cmd=10
 	until [ $cmd == 8 ]
 	do
-		echo "Enter the number corresponding to the menu action you would like to perform:"
-		echo "1. Create a folder"
+		echo -e "${blueTxt}Enter the number corresponding to the menu action you would like to perform:"
+		echo -e "${cyanTxt}1. Create a folder"
 		echo "2. Copy a folder"
 		echo "3. Set a password"
 		echo "4. Calculator"
 		echo "5. Create Week Folders"
 		echo "6. Check Filenames"
-		echo "7. Download a File"
+		echo -e "7. Download a File${noCol}"
 		echo "8. Exit"
 		read -p ">" cmd
 		case "$cmd" in
