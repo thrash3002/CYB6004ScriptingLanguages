@@ -5,6 +5,7 @@
 ### - use 'case' conditional
 ### - use '*)' for default case in 'case' conditional
 ### - a basic command history implementation
+### - convert a string into an array of words - 'weekargs=($weeks)'
 
 #run passwordCheck.sh
 ./passwordCheck.sh
