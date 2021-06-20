@@ -27,7 +27,7 @@ do
 	getNumber "please type a number between 1 and 100" 1 100
 	guess=$REPLY
 	if [ $guess -eq 42 ]; then
-		echo "Correct!"
+		echo "Right!"
 	elif [ $guess -gt 42 ]; then
 		echo "Too High!"
 	else
