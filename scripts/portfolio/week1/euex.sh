@@ -1,4 +1,11 @@
 #!/bin/bash
+
+### euex.sh
+### - use curl to query an API
+### - use jq to parse json data
+### - use tput to move the cursor position
+### - use sleep to cause the script to sleep for a period
+
 apiPath="https://api.exchangerate-api.com/v4/latest/EUR"
 fileName="index.html" #output file
 Browsers="google-chrome firefox"
