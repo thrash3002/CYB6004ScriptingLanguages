@@ -6,6 +6,7 @@
 ### - use of awk field separator FS inbuilt function
 ### - use of awk output record separator ORS inbuilt function
 ###	to allow multiple print calls to print on the same line
+### - use of * within printf to specify a variable length
 
 awk '
 function ColumnSeparator() {
@@ -29,6 +30,12 @@ function PrintSection(string, colour) {
 	print string
 	NoColour()
 }
+function PrintfSection(string, len, colour) {
+	ColumnSeparator()
+	print colour
+	printf("%*s", len, string)
+	NoColour()
+}
 
 BEGIN {
 	FS=":";
@@ -45,7 +52,7 @@ BEGIN {
 }
 {
 	ORS=""
-	PrintSection($1, UserColour())   # Username
+	PrintfSection($1, -10, UserColour())   # Username
 	PrintSection($3, DetailColour()) # UserID
 	PrintSection($4, DetailColour()) # GroupID
 	PrintSection($6, DetailColour()) # Home
