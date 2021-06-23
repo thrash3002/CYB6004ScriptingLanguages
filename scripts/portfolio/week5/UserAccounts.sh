@@ -122,7 +122,9 @@ BEGIN {
 	ORS="\n"
 	ColumnSeparator()
 }
-{
+
+# removing the regex before the open curly braces will show all users
+/bin\/bash/{
 	ORS=""
 	PrintfSection($1, usernameColWidth, UserColour())   # Username
 	PrintfSection($3, userIDColWidth  , DetailColour()) # UserID
