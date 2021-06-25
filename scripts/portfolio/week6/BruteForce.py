@@ -25,6 +25,7 @@ for length in range(1, 16):
 	for tuple in tuples:
 		word = "".join(tuple)
 		wordHash = sha256hash(word)
+		# WARNING: uncommenting the following line will cause the script to take almost a half hour to run
 		#print(f"Trying password {word}:{wordHash}")
 		if(wordHash == passwordHash):
 			print(f"Password has been cracked! It is {word}")
