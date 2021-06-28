@@ -1,0 +1,10 @@
+Download and access a list of information about the top 100 linux security tools
+ 
+CLI options:
+	- Use --help to access this menu
+	- Use -c followed by "> filename.csv" to output in csv format 
+		to filename.csv.  Please note format is UTF-8 and 
+		delimiter is the ^ character, not the standard comma.
+		This is because some of the text may have a comma
+	- Use -f to specify a filter (cannot have any spaces) - will 
+		automatically output as csv format
